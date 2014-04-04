@@ -1,0 +1,10 @@
+.ide-body {
+  padding-top: 4.5em;
+}
+
+#editor {
+  min-height: 500px;
+  height: auto !important;
+  height: 500px;
+}
+

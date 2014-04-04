@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Happiness</title>
+    <link href="ide.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Team <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">SRZ</a></li>
+                <li><a href="#">SRZ2</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Project <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">test</a></li>
+                <li><a href="#">giant-bees</a></li>
+                <li>
+                  <form class="navbar-form" role="form">
+                    <input type="text" placeholder="New project..."
+                           class="input-sm form-control">
+                  </form>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#">Export</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ide-body container">
+      <div class="row">
+        <div class="col-md-2">
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="#">robot</a></li>
+            <li>
+            <form class="nav-form" role="form">
+              <input type="text" placeholder="New module..."
+                     class="input-sm form-control">
+            </form>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-10" id="editor"></div>
+      </div>
+    </div>
+     <script src="ide.js"></script>
+  </body>
+</html>
+

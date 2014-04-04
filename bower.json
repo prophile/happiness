@@ -1,0 +1,23 @@
+{
+  "name": "Happiness",
+  "description": "A simple web IDE",
+  "version": "0.0.1",
+  "license": "MIT",
+  "keywords": ["IDE"],
+  "authors": ["Alistair Lynn <alynn@studentrobotics.org>"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prophile/happiness.git"
+  },
+  "dependencies": {
+    "bootstrap": "3.1",
+    "jquery": "2.1",
+    "ace-builds": "1.1",
+    "zepto": "1.1",
+    "firepad": "0.1",
+    "firebase": "1.0",
+    "bacon": "0.7"
+  },
+  "private": true
+}
+
