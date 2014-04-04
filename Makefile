@@ -15,7 +15,7 @@ CSS_SOURCES=bower_components/bootstrap/dist/css/bootstrap.css \
 COMPRESSION_OPTIONS=--compress --mangle
 #COMPRESSION_OPTIONS=
 
-all: site/index.html site/ide.js site/ide.css
+all: site/index.html site/ide.js site/ide.css site/fonts
 
 bower_components: bower.json
 	bower install
@@ -48,6 +48,10 @@ site/ide.js: build/source.map bower_components | site
 
 site/ide.css: $(CSS_SOURCES) | site
 	cat $(CSS_SOURCES) > $@
+
+site/fonts: bower_components/bootstrap/dist/fonts | site
+	rm -rf $@
+	cp -R $< $@
 
 clean:
 	rm -rf bower_components build site
