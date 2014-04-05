@@ -1,6 +1,7 @@
 COFFEE=coffee
 
-JS_COMPONENTS=init
+JS_COMPONENTS=init \
+              components/teamlist
 JS_EXTERNALS=bower_components/jquery/dist/jquery.js \
              bower_components/bootstrap/dist/js/bootstrap.js \
              bower_components/ace-builds/src-noconflict/ace.js \
@@ -12,8 +13,8 @@ JS_EXTERNALS=bower_components/jquery/dist/jquery.js \
 CSS_SOURCES=bower_components/bootstrap/dist/css/bootstrap.css \
             bower_components/firepad/dist/firepad.css \
             style.css
-COMPRESSION_OPTIONS=--compress --mangle
-#COMPRESSION_OPTIONS=
+#COMPRESSION_OPTIONS=--compress --mangle
+COMPRESSION_OPTIONS=
 
 all: site/index.html site/ide.js site/ide.css site/fonts
 
