@@ -20,7 +20,7 @@ the drop-down menu for selecting the current team.
 
     if AUTH_DATA.teams.length is 1
       Happiness.TeamList.CurrentTeam =
-        Bacon.never().toProperty AUTH_DATA.teams[0]
+        Bacon.constant AUTH_DATA.teams[0]
 
 Otherwise, we bring up the team list.
 

@@ -1,7 +1,8 @@
 COFFEE=coffee
 
 JS_COMPONENTS=init \
-              components/teamlist
+              components/teamlist \
+              components/project-switcher
 JS_EXTERNALS=bower_components/jquery/dist/jquery.js \
              bower_components/bootstrap/dist/js/bootstrap.js \
              bower_components/ace-builds/src-noconflict/ace.js \
