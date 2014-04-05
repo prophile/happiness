@@ -54,11 +54,3 @@ selected. If not, it shows "Team".
                       .map((x) -> x ? 'Team')
                       .assign($('#team-name'), 'text')
 
-Debug: Team List Dump
----------------------
-
-For debugging purposes, we dump team switches.
-
-    Happiness.TeamList.CurrentTeam.toEventStream().onValue (val) ->
-      console.log "Switched team: " + val
-

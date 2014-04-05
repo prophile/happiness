@@ -1,10 +1,13 @@
 COFFEE=coffee
 
 JS_COMPONENTS=init \
+              firebase \
               components/teamlist \
-              components/project-switcher
+              components/project-switcher \
+              get-projects
 JS_EXTERNALS=bower_components/jquery/dist/jquery.js \
              bower_components/bootstrap/dist/js/bootstrap.js \
+             bower_components/underscore/underscore.js \
              bower_components/ace-builds/src-noconflict/ace.js \
              bower_components/ace-builds/src-noconflict/mode-python.js \
              bower_components/ace-builds/src-noconflict/theme-textmate.js \
