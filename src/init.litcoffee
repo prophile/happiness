@@ -14,7 +14,11 @@ Editor Setup
 
 The first thing we do as part of init is prepare the code window for editing.
 
-      editor = ace.edit "editor"
-      editor.setTheme "ace/theme/textmate"
-      editor.getSession().setMode "ace/mode/python"
+      Happiness.EditWindow = ace.edit "editor"
+      Happiness.EditWindow.setTheme "ace/theme/textmate"
+      Happiness.EditWindow.getSession().setMode "ace/mode/python"
+
+Let's get rid of that obnoxious logo while we're at it.
+
+      $('.powered-by-firepad').remove()
 
