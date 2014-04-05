@@ -79,6 +79,19 @@ All modules have the mod-list-item class.
         item.append element
         list.prepend item
 
+Module Highlight
+----------------
+
+Whenever the module list or the module changes, we highlight the
+currently selected module.
+
+    Bacon.combineWith(((x, y) -> x),
+                      Happiness.ModuleList.CurrentModule,
+                      Happiness.ModuleList.Modules)
+         .onValue (selected) ->
+      $('.mod-list-item').each (element) ->
+        $(this).toggleClass "active", $(this).text() is selected
+
 New Modules
 -----------
 
