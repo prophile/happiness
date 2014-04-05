@@ -5,6 +5,7 @@ JS_COMPONENTS=init \
               input-boxes \
               components/teamlist \
               components/project-switcher \
+              components/module-list \
               get-projects
 JS_EXTERNALS=bower_components/jquery/dist/jquery.js \
              bower_components/bootstrap/dist/js/bootstrap.js \
