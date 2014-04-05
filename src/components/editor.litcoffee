@@ -30,8 +30,17 @@ convenience, we do this with a nasty chunk of imperative code.
       if lastPad?
         lastPad.dispose()
         lastPad = null
+        $('#editor-container').empty()
       if newSource?
-        lastPad = Firepad.fromACE newSource,
-                                  Happiness.EditWindow,
-                                  userId: AUTH_DATA['username']
+        edit = $('<div id="editor">')
+        $('#editor-container').append(edit)
+        _.defer ->
+          ew = ace.edit "editor"
+          ew.setTheme "ace/theme/textmate"
+          ew.getSession().setMode "ace/mode/python"
+          lastPad = Firepad.fromACE newSource,
+                                    ew,
+                                    userId: AUTH_DATA['username']
+          _.defer ->
+            $('.powered-by-firepad').remove()
 

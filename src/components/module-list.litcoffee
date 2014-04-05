@@ -79,8 +79,15 @@ All modules have the mod-list-item class.
         item.append element
         list.prepend item
 
-Debug: Dump Selection
----------------------
+New Modules
+-----------
 
-    Happiness.ModuleList.CurrentModule.onValue((x) -> console.log(x))
+Creating new modules is essentially the same as creating projects.
+
+    handleSubmitEvent = (event) ->
+      event.preventDefault()
+      $('#new-mod').blur()
+    newModuleRequest = $('#new-mod').asEventStream('submit', handleSubmitEvent)
+    selectedModule.plug Happiness.InputValues('#new-mod input')
+                                 .sampledBy(newModuleRequest)
 
