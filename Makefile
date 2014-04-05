@@ -2,6 +2,7 @@ COFFEE=coffee
 
 JS_COMPONENTS=init \
               firebase \
+              input-boxes \
               components/teamlist \
               components/project-switcher \
               get-projects

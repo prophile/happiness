@@ -86,3 +86,16 @@ project, if one is selected.
                              .map((x) -> x ? "Projects")
                              .assign($('#proj-name'), 'text')
 
+New Projects
+------------
+
+Creating new projects is essentially just a matter of forcing a new
+name into the projects list.
+
+    handleSubmitEvent = (event) ->
+      event.preventDefault()
+      $('#new-project').blur()
+    newProjectRequest = $('#new-project').asEventStream('submit', handleSubmitEvent)
+    switchProject.plug Happiness.InputValues('#new-project input')
+                                .sampledBy(newProjectRequest)
+
