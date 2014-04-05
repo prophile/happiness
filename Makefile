@@ -5,6 +5,7 @@ JS_COMPONENTS=init \
               input-boxes \
               components/teamlist \
               components/project-switcher \
+              components/project-view \
               components/module-list \
               components/editor \
               get-projects
