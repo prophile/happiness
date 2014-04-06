@@ -3,11 +3,14 @@ from bottle import static_file, route, request, response, \
 import os.path
 import json
 from functools import wraps
-from base64 import b64decode
+from base64 import b64decode, b64encode
+import urllib.parse
+import hammock
 
 SITE_PATH = 'site'
 DEV_MODE = True
 CACHE_TIME = 60
+NEMESIS_ROOT = 'https://{auth}@www.studentrobotics.org/userman'
 
 def cache(fn):
     if DEV_MODE:
@@ -20,13 +23,23 @@ def cache(fn):
         return result
     return inner
 
-def simple_auth_example(username, password):
-    if username == password:
-        return {'username': username,
-                'teams': ['SRZ', 'SRZ2'],
-                'firebase-token': 'bees',
-                'admin': True}
-    return None
+def nemesis_auth(username, password):
+    auth_part = '{}:{}'.format(urllib.parse.quote(username),
+                               urllib.parse.quote(password))
+    rest_root = NEMESIS_ROOT.format(auth = auth_part)
+    rest = hammock.Hammock(rest_root)
+
+    response = rest.user(username).GET()
+    if not response.ok:
+        return None
+
+    output = response.json()
+    if output['has_withdrawn']:
+        return None
+    return {'username': output['username'],
+            'teams': [team[5:] for team in output['teams']],
+            'firebase-token': 'bees',
+            'admin': output['is_blueshirt']}
 
 def need_auth(mechanism):
     def wrapper(fn):
@@ -59,7 +72,7 @@ def static(*subpaths, mime='auto'):
                        mimetype=mime)
 
 @route('/')
-@need_auth(simple_auth_example)
+@need_auth(nemesis_auth)
 def index(data):
     with open(os.path.join(SITE_PATH, 'index.html')) as f:
         content = f.read()
